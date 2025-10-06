@@ -43,6 +43,54 @@
             },
         };
     </script>
+    
+    <style>
+        .gallery-item {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: zoomIn 0.3s ease-in-out;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .lightbox-close:hover {
+            color: #ccc;
+        }
+    </style>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display">
@@ -161,7 +209,7 @@
                     </div>
                     <section class="py-12" data-aos="fade-up">
                         <h2
-                            class="text-background-dark dark:text-background-light text-3xl font-bold tracking-tight px-4 pb-6">
+                            class="text-background-dark dark:text-background-light text-2xl sm:text-3xl font-bold tracking-tight px-4 pb-6">
                             Öne Çıkan Ürünler</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
 <div class="flex flex-col gap-4 rounded-lg" data-aos="fade-up" data-aos-delay="100">
@@ -201,7 +249,7 @@
 </section>
                     <section class="py-12" data-aos="fade-up">
                         <h2
-                            class="text-background-dark dark:text-background-light text-3xl font-bold tracking-tight px-4 pb-6">
+                            class="text-background-dark dark:text-background-light text-2xl sm:text-3xl font-bold tracking-tight px-4 pb-6">
                             Tüm Modellerimiz</h2>
                         <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6 p-4">
                             <div class="flex flex-col gap-3" data-aos="fade-up" data-aos-delay="100">
@@ -236,7 +284,7 @@
                     </section>
                     <section class="py-12" data-aos="fade-up">
                         <h2
-                            class="text-background-dark dark:text-background-light text-3xl font-bold tracking-tight px-4 pb-6">
+                            class="text-background-dark dark:text-background-light text-2xl sm:text-3xl font-bold tracking-tight px-4 pb-6">
                             Kategoriler</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
                             <div class="flex flex-col gap-3" data-aos="fade-up" data-aos-delay="100">
@@ -261,9 +309,86 @@
                     </section>
                 </div>
             </main>
-            <section class="py-12 bg-gray-100 dark:bg-gray-800" data-aos="fade-up">
+            
+            <div id="galleries-container" class="py-12">
+    <h2 class="text-background-dark dark:text-background-light text-4xl font-bold tracking-tight px-4 pb-10 text-center">
+        Ürün Modellerimiz
+    </h2>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Çizme Modelleri</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/çizme modelleri/IMG-20251006-WA0053.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0042.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0041.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0037.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0035.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0034.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0032.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0033.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0031.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/çizme modelleri/IMG-20251006-WA0029.jpg" alt="Çizme Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Deri Ayakkabı Modelleri</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/deri ayakkabı modelleri/1.jpg" alt="Deri Ayakkabı Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Fermuarlı Kar Botu</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/fermuarlı kar botu/WhatsApp Görsel 2025-10-06 saat 19.00.34_c031c65d.jpg" alt="Fermuarlı Kar Botu" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Kara Lastik Ayakkabı Türü Modelleri</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/kara lastik ayakkabı türü modelleri/1.jpg" alt="Kara Lastik Ayakkabı Türü Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Kara Lastik Modelleri</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/kara lastik modelleri/IMG-20251006-WA0052.jpg" alt="Kara Lastik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/kara lastik modelleri/IMG-20251006-WA0051.jpg" alt="Kara Lastik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/kara lastik modelleri/IMG-20251006-WA0050.jpg" alt="Kara Lastik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/kara lastik modelleri/IMG-20251006-WA0049.jpg" alt="Kara Lastik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/kara lastik modelleri/IMG-20251006-WA0048.jpg" alt="Kara Lastik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Mest Modelleri</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/mest modelleri/1.jpg" alt="Mest Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Renkli Kara Lastik Köy Lastiği</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/renkli kara lastik köy lastiği/1.jpg" alt="Renkli Kara Lastik Köy Lastiği" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+
+    <section class="py-8" data-aos="fade-up">
+        <h3 class="text-xl sm:text-2xl font-bold text-center mb-6 capitalize text-background-dark dark:text-background-light">Terlik Modelleri Renkli Lastik</h3>
+        <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
+            <img src="img/terlik modelleri renkli lastik/IMG-20251006-WA0028.jpg" alt="Terlik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/terlik modelleri renkli lastik/IMG-20251006-WA0027.jpg" alt="Terlik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/terlik modelleri renkli lastik/IMG-20251006-WA0024.jpg" alt="Terlik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+            <img src="img/terlik modelleri renkli lastik/IMG-20251006-WA0023.jpg" alt="Terlik Modeli" class="gallery-item w-full h-auto rounded-lg shadow-md object-cover aspect-square">
+        </div>
+    </section>
+</div>            <section class="py-12 bg-gray-100 dark:bg-gray-800" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-background-dark dark:text-background-light">Konumumuz</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold text-background-dark dark:text-background-light">Konumumuz</h2>
         <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">Bizi yerimizde ziyaret edin.</p>
         <div class="mt-6">
             <a href="https://share.google/U4RQRHUUW7MYQdokO" target="_blank"
@@ -360,6 +485,41 @@
     mobileMenuCloseButton.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
     });
+</script>
+
+
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+<script>
+    const galleries = document.querySelectorAll('.gallery-grid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    galleries.forEach(gallery => {
+        gallery.addEventListener('click', e => {
+            if (e.target.tagName === 'IMG') {
+                lightbox.classList.add('active');
+                lightboxImg.src = e.target.src;
+            }
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener('click', e => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
+    }
 </script>
 </body>
 
